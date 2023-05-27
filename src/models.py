@@ -39,7 +39,7 @@ class Post(Base):
 class Comment(Base):
     __tablename__ = 'comment'
     id = Column(Integer, primary_key=True)
-    text = Column(Integer)
+    text = Column(String(300), nullable=False)
     user_id = Column(Integer, ForeignKey('user.id'))
     post_id = Column(Integer, ForeignKey('post.id'))
 
